@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -19,3 +19,5 @@
 /Starter files/.vs/Library/v15
 /Starter files/Library.API/bin/Debug/netcoreapp2.2
 /Starter files/Library.API/obj
+Finished sample/.vs/
+Finished sample/Library.API/obj/

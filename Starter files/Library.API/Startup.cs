@@ -76,6 +76,16 @@ namespace Library.API
             services.AddScoped<IAuthorRepository, AuthorRepository>();
 
             services.AddAutoMapper();
+
+            services.AddSwaggerGen(setupAction =>
+            {
+                setupAction.SwaggerDoc("SamuraiOpenAPISpecification",
+                    new Microsoft.OpenApi.Models.OpenApiInfo()
+                    {
+                        Title = "Samurai API",
+                        Version = "1"
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,6 +103,9 @@ namespace Library.API
             }
 
             app.UseHttpsRedirection();
+
+            //we add at back of UseHttpsRedirection, so that all link to swagger website using http will redirect to https site
+            app.UseSwagger();
 
             app.UseStaticFiles();
 
